@@ -10307,3 +10307,17 @@ h3 {
 .small {
   font-size: 0.875rem !important;
 }
+
+.image-form__tag {
+  display: flex;
+  align-items: center;
+}
+.image-form__tag:not(:last-child) {
+  margin-right: 8px;
+}
+.image-form__tag-input {
+  margin-right: 4px;
+}
+.image-form__tag p {
+  margin: 0 4px 0 0;
+}

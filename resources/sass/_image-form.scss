@@ -1,0 +1,20 @@
+.image-form {
+
+    &__tag {
+        display: flex;
+        align-items: center;
+    }
+
+
+     &__tag:not(:last-child) {
+         margin-right: 8px;
+     }
+
+    &__tag-input {
+        margin-right: 16px;
+    }
+
+    &__tag p {
+        margin:  0 4px 0 0;
+    }
+}

@@ -3802,16 +3802,12 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bs_custom_file_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bs-custom-file-input */ "./node_modules/bs-custom-file-input/dist/bs-custom-file-input.js");
 /* harmony import */ var bs_custom_file_input__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bs_custom_file_input__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _image_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-form */ "./resources/js/image-form.js");
-/* harmony import */ var _image_form__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_image_form__WEBPACK_IMPORTED_MODULE_1__);
 
 bs_custom_file_input__WEBPACK_IMPORTED_MODULE_0___default().init();
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
-
-
 
 /***/ }),
 
@@ -3856,16 +3852,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/image-form.js":
-/*!************************************!*\
-  !*** ./resources/js/image-form.js ***!
-  \************************************/
-/***/ (() => {
-
-
 
 /***/ }),
 
