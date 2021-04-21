@@ -1,3 +1,6 @@
-require('./bootstrap');
+import bsCustomFileInput from "bs-custom-file-input";
+bsCustomFileInput.init();
 
-require('alpinejs');
+require("./bootstrap");
+
+require("alpinejs");
