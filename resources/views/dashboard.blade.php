@@ -5,5 +5,8 @@
         </h2>
     </x-slot>
 
-    <x-jet-welcome />
+    {{-- <x-jet-welcome /> --}}
+
+    <livewire:image-form />
+
 </x-app-layout>
