@@ -10308,15 +10308,31 @@ h3 {
   font-size: 0.875rem !important;
 }
 
-.image-form__tag {
+.image-form__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.image-form .invalid-feedback {
+  display: initial;
+}
+.image-form__tags, .image-form__tag {
   display: flex;
+}
+.image-form__tags {
+  align-items: center;
+}
+.image-form__tags h6 {
+  margin: 0 8px 0 0;
+}
+.image-form__tag {
   align-items: center;
 }
 .image-form__tag:not(:last-child) {
   margin-right: 8px;
 }
 .image-form__tag-input {
-  margin-right: 4px;
+  margin-right: 16px;
 }
 .image-form__tag p {
   margin: 0 4px 0 0;

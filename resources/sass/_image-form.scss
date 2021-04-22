@@ -1,10 +1,30 @@
 .image-form {
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 
-    &__tag {
-        display: flex;
+    & .invalid-feedback {
+        display: initial;
+    }
+
+     &__tags,
+     &__tag {
+         display: flex;
+     }
+
+    &__tags {
         align-items: center;
     }
 
+    &__tags h6 {
+        margin: 0 8px 0 0;
+    }
+
+    &__tag {
+        align-items: center;
+    }
 
      &__tag:not(:last-child) {
          margin-right: 8px;
@@ -15,6 +35,6 @@
     }
 
     &__tag p {
-        margin:  0 4px 0 0;
+        margin: 0 4px 0 0;
     }
 }
