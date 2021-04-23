@@ -5,9 +5,9 @@
         height: auto;
     }
 
-    & .invalid-feedback {
-        display: initial;
-    }
+    // & .invalid-feedback {
+    //     display: initial;
+    // }
 
      &__tags,
      &__tag {
@@ -36,5 +36,10 @@
 
     &__tag p {
         margin: 0 4px 0 0;
+    }
+
+    & .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 }

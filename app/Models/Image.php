@@ -13,6 +13,7 @@ class Image extends Model
         'image_path',
         'tags',
         'user_id',
+        'title'
     ];
 
     public function user()

@@ -15,6 +15,7 @@ class ImageForm extends Component
 
     public $tag;
     public $tags = array();
+    public $title;
 
 
     public function addTag() {
@@ -44,6 +45,7 @@ class ImageForm extends Component
         $request = $this->validate([
             'file' => 'required|image|mimes:jpg,jpeg,png,svg,gif',
             'tags' => 'required',
+            'title' => 'required'
         ]);
 
         $file = $this->file->store('images', 'public');
@@ -52,12 +54,14 @@ class ImageForm extends Component
         $request['image_path'] = $file;
         $request['tags'] = $tags;
         $request['user_id'] = $user_id;
+        $request['title'] = $this->title;
 
         Image::create($request);
 
         $this->tags = array();
         $this->tag = '';
         $this->file = null;
+        $this->title='';
 
         session()->flash('message', 'File uploaded.');
     }

@@ -3807,7 +3807,14 @@ bs_custom_file_input__WEBPACK_IMPORTED_MODULE_0___default().init();
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
+__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); //hide message after few seconds
+
+
+$('#submitBtn').click(function () {
+  setTimeout(function () {
+    $('.alert').fadeOut(1000);
+  }, 2500);
+});
 
 /***/ }),
 

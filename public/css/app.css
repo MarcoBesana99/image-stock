@@ -10313,9 +10313,6 @@ h3 {
   width: 100%;
   height: auto;
 }
-.image-form .invalid-feedback {
-  display: initial;
-}
 .image-form__tags, .image-form__tag {
   display: flex;
 }
@@ -10336,4 +10333,8 @@ h3 {
 }
 .image-form__tag p {
   margin: 0 4px 0 0;
+}
+.image-form .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
