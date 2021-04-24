@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Favorite extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'image_path',
-        'tags',
         'user_id',
-        'title'
+        'image_id'
     ];
 
     public function user()
@@ -21,13 +19,8 @@ class Image extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function comments()
+    public function image()
     {
-        return $this->hasMany(Comment::class);
-    }
-
-    public function favorites()
-    {
-        return $this->hasMany(Favorite::class);
+        return $this->belongsTo(Image::class, 'image_id', 'id');
     }
 }
