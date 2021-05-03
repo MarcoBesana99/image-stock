@@ -13,3 +13,11 @@ $('#submitBtn').click(() => {
   }, 2500)
 })
 
+$('.btn-comment').click(() => {
+  setTimeout( () => {
+    $('.alert-danger').fadeOut(800)
+  }, 2000)
+})
+
+
+

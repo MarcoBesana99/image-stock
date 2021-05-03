@@ -15,6 +15,7 @@
                 <button class="btn btn-danger mt-3"
                     x-on:click="$wire.delete({{ $imageId }}); show = false">Delete</button>
             @endif
+            <livewire:comment-handler :key="time() . $imageId" :imageId="$imageId"/>
         </div>
     </div>
 </div>
