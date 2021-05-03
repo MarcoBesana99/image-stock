@@ -3815,6 +3815,11 @@ $('#submitBtn').click(function () {
     $('.alert').fadeOut(1000);
   }, 2500);
 });
+$('.btn-comment').click(function () {
+  setTimeout(function () {
+    $('.alert-danger').fadeOut(800);
+  }, 2000);
+});
 
 /***/ }),
 

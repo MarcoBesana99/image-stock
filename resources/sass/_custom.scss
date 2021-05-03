@@ -108,3 +108,27 @@
 .small {
   font-size: .875rem !important;
 }
+
+.show-link {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.comments-number, 
+.image .badge {
+  font-size: 13px;
+}
+
+.comment {
+  & h5 {
+    font-size: 15px;
+  }
+  & p {
+    font-size: 13.5px;
+  }
+}

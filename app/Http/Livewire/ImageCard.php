@@ -14,6 +14,7 @@ class ImageCard extends Component
     public $image_path;
     public $user_id;
 
+    protected $listeners = ['refreshComments' => 'render'];
 
     public function render()
     {
