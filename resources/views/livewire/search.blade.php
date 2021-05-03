@@ -1,4 +1,4 @@
-<div class="search">
+<div>
     <div class="input-group mb-3">
         <input
             type="text"
@@ -9,7 +9,9 @@
             wire:model.debounce.500ms="search"
         >
     </div>
-    @foreach ($images as $image)
-        <livewire:image-card :key="$image->id" :image="$image">
-    @endforeach
+    <div class="row">
+        @foreach ($images as $image)
+            <livewire:image-card :key="$image->id" :image="$image">
+        @endforeach
+    </div>
 </div>
