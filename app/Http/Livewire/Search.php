@@ -9,20 +9,30 @@ class Search extends Component {
     public $images;
     public $search;
     public $matchedTags = array();
+    public $message = '';
 
     public function render() {
         return view('livewire.search');
     }
 
     public function mount() {
-        $this->images = Image::orderBy('created_at', 'DESC')->take(10)->get();
+        $this->loadImages();
     }
+
+    public function loadImages() {
+        $this->images = Image::orderBy('created_at', 'DESC')->take(10)->get();
+    } 
 
     function getTags($image) {
         return $image->tags;
     }
 
     public function updated() {
+        if($this->search == '') {
+            $this->message = '';
+            $this->loadImages();
+            return;
+        }
         $allImages = new Image();
         $images = $allImages->orderBy('created_at', 'DESC')->take(10)->get();
         $allTagsArray = array_map(array($this, 'getTags'), json_decode($images));
@@ -44,6 +54,7 @@ class Search extends Component {
 
 
         if (count($this->matchedTags) > 0) {
+            $this->message = '';
             $newImages = array();
 
             foreach($this->matchedTags as $matchedTag) {
@@ -56,9 +67,12 @@ class Search extends Component {
             }
 
             if (count($newImages) > 0)
-                $this->images = $newImages;
+                $this->images = array_unique($newImages,SORT_REGULAR);
 
             $this->matchedTags = array();
+        }
+        else {
+            $this->message = 'There are no matched images';
         }
     }
 }
