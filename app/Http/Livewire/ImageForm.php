@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\Image;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -23,18 +22,13 @@ class ImageForm extends Component
 
         if (strlen($this->tag) > 0 )
             array_push($this->tags, $this->tag);
-        
+
         $this->tag = '';
     }
 
     public function removeTag($index) {
         array_splice($this->tags, $index, 1);
     }
-
-    // TODO configure driver
-    // public function export() {
-    //     return Storage::disk('images')->download($this->file);
-    // }
 
     public function submit() {
         if (count($this->tags) === 0)

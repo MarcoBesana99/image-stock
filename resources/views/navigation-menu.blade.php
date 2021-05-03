@@ -11,16 +11,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                    {{ __('Home') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="{{ route('my-images') }}" :active="request()->routeIs('my-images')">
-                    {{ __('My Images') }}
-                </x-jet-nav-link>
+                @auth
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('my-images') }}" :active="request()->routeIs('my-images')">
+                        {{ __('My Images') }}
+                    </x-jet-nav-link>
+                @endauth
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto align-items-baseline">
+                @if (Route::has('login'))
+                    @if (!Auth::check())
+                        <a href="{{ route('login') }}" class="text-sm mr-4 text-gray-700 underline">Log in</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="text-sm text-gray-700 underline">Register</a>
+                        @endif
+                    @endif
+                @endif
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <x-jet-dropdown id="teamManagementDropdown">
