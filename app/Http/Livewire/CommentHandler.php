@@ -27,7 +27,7 @@ class CommentHandler extends Component
 
     public function mount() {
         $this->loadComments();
-        $this->loadNumberOfComments();
+        $this->numberOfComments = Comment::where('image_id',$this->imageId)->count();
         $this->checkLoadingStatus();
     }
 
@@ -50,10 +50,6 @@ class CommentHandler extends Component
         $this->comments =  Comment::where('image_id',$this->imageId)->orderBy('created_at', 'desc')->take($this->amount)->get();
     }
 
-    public function loadNumberOfComments() {
-        $this->numberOfComments = Comment::where('image_id',$this->imageId)->count();
-    }
-
     public function comment() {
         $this->validate($this->rules);
         $comment = new Comment();
@@ -62,8 +58,7 @@ class CommentHandler extends Component
         $comment->image_id = $this->imageId;
         $comment->save();
         $this->comment = '';
-        $this->loadComments();
-        $this->loadNumberOfComments();
+        $this->emitUp('refreshComments');
     }
 
     public function showMore()
