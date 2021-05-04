@@ -19,6 +19,7 @@
     @endif
     @auth
         <form wire:submit.prevent="comment" class="mt-2">
+            @csrf
             <textarea class="form-control" wire:model.lazy="comment" rows="1"></textarea>
             @error('comment') <div class="alert alert-danger mt-3" role="alert">{{ $message }}</div> @enderror
             <button type="submit" class="btn-block btn btn-primary mt-2 btn-comment">Submit comment</button>
