@@ -13,15 +13,20 @@ class ImageCard extends Component
     public $tags;
     public $image_path;
     public $user_id;
+    public $image;
 
-    protected $listeners = ['refreshComments' => 'render'];
+    protected $listeners = [
+        'refreshComments' => 'render',
+        'refreshFavorites' => 'render'
+    ];
 
     public function render()
     {
         return view('livewire.image-card');
     }
 
-    public function mount($image) {
+    public function mount($image)
+    {
         $this->imageId = $image->id;
         $this->title = $image->title;
         $this->tags = $image->tags;
@@ -34,6 +39,6 @@ class ImageCard extends Component
         $user_id = Auth::user()->id;
 
         if ($user_id === $this->user_id)
-            Image::where('id',$id)->delete();
+            Image::where('id', $id)->delete();
     }
 }

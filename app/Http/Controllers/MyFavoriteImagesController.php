@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use Illuminate\Support\Facades\Auth;
 
-class MyImagesController extends Controller
+class MyFavoriteImagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,7 @@ class MyImagesController extends Controller
      */
     public function index()
     {
-        $images = Image::orderBy('created_at','desc')->where('user_id', auth()->user()->id)->get();
-
-        return view('my-images', compact('images'));
+        $images = Image::orderBy('created_at','desc')->get();
+        return view('my-favorites', compact('images'));
     }
 }

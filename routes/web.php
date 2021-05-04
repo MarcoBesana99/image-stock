@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MyFavoriteImagesController;
 use App\Http\Controllers\MyImagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,10 +19,14 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/my-images', [MyImagesController::class, 'index'])
-    ->name('my-images');
+    Route::get('/my-images', [MyImagesController::class, 'index'])
+        ->name('my-images');
+
+    Route::get('/my-favorites', [MyFavoriteImagesController::class, 'index'])
+        ->name('my-favorites');
+});

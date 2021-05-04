@@ -21,6 +21,9 @@
                     <x-jet-nav-link href="{{ route('my-images') }}" :active="request()->routeIs('my-images')">
                         {{ __('My Images') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('my-favorites') }}" :active="request()->routeIs('my-favorites')">
+                        {{ __('My Favorites') }}
+                    </x-jet-nav-link>
                 @endauth
             </ul>
 
