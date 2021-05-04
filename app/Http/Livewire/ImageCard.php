@@ -16,7 +16,6 @@ class ImageCard extends Component
     public $image;
 
     protected $listeners = [
-        'refreshComments' => 'render',
         'refreshFavorites' => 'render'
     ];
 
