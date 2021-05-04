@@ -2,7 +2,7 @@
     <h2>Upload your image</h2>
     <div class="col-lg-7 col-md-10 col-12 mt-4">
         <form class="image-form" wire:submit.prevent="submit" enctype="multipart/form-data">
-
+            @csrf
             <div class="row flex-column">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
