@@ -6,8 +6,10 @@
     </x-slot>
 
     <div class="row">
-        @foreach ($images as $image)
+        @forelse ($images as $image)
             <livewire:image-card :image="$image" :key="$loop->index" />
-        @endforeach
+        @empty
+            <div class="alert alert-danger">You haven't uploaded any images yet.</div>
+        @endforelse
     </div>
 </x-app-layout>
