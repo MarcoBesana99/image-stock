@@ -13,7 +13,7 @@ class MyImagesController extends Controller
      */
     public function index()
     {
-        $images = Image::orderBy('created_at','desc')->where('user_id', auth()->user()->id)->get();
+        $images = auth()->user()->images->sortByDesc('created_at');
 
         return view('my-images', compact('images'));
     }
