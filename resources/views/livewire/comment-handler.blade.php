@@ -1,11 +1,13 @@
-<div class="mt-3 border border-left-0 border-right-0 border-bottom-0">
-    <div class="text-right mt-1 comments-number">{{ $numberOfComments }} comments</div>
-    @foreach ($comments as $comment)
-        <div class="comment bg-light p-2 rounded mt-2">
-            <h5 class="font-weight-bold">{{ $comment->user->name }}</h5>
-            <p>{{ $comment->content }}</p>
-        </div>
-    @endforeach
+<div>
+    <div class="mt-3 border border-left-0 border-right-0 border-bottom-0 comment-container">
+        <div class="text-right mt-1 comments-number">{{ $numberOfComments }} comments</div>
+        @foreach ($comments as $comment)
+            <div class="comment bg-light p-2 rounded mt-2">
+                <h5 class="font-weight-bold">{{ $comment->user->name }}</h5>
+                <p>{{ $comment->content }}</p>
+            </div>
+        @endforeach
+    </div>
     @if ($showMore)
         <div class="text-center mt-2">
             <a wire:click="showMore" class="show-link">Show More</a>
