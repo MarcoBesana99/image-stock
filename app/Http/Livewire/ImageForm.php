@@ -45,7 +45,7 @@ class ImageForm extends Component
         //$file = $this->file->store('images', 'public');
         $user_id = Auth::user()->id;
 
-        $image = $request->file('images');
+        $image = $this->file('images');
         $name = $image->getClientOriginalName();
         $image->move(public_path() . '/img/', $name);
 
