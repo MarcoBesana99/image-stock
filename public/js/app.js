@@ -3796,6 +3796,7 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
+<<<<<<< HEAD
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3820,6 +3821,13 @@ $('.btn-comment').click(function () {
     $('.alert-danger').fadeOut(800);
   }, 2000);
 });
+=======
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
+>>>>>>> 49d58d7acb932959976d0e528320d661326b922f
 
 /***/ }),
 
@@ -8308,6 +8316,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./node_modules/bs-custom-file-input/dist/bs-custom-file-input.js":
 /*!************************************************************************!*\
   !*** ./node_modules/bs-custom-file-input/dist/bs-custom-file-input.js ***!
@@ -8484,6 +8493,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+=======
+>>>>>>> 49d58d7acb932959976d0e528320d661326b922f
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -39490,6 +39501,7 @@ process.umask = function() { return 0; };
 /******/ 		};
 /******/ 	})();
 /******/ 	
+<<<<<<< HEAD
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -39502,6 +39514,8 @@ process.umask = function() { return 0; };
 /******/ 		};
 /******/ 	})();
 /******/ 	
+=======
+>>>>>>> 49d58d7acb932959976d0e528320d661326b922f
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

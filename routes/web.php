@@ -30,3 +30,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/my-favorites', [MyFavoriteImagesController::class, 'index'])
         ->name('my-favorites');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/my-images', function () {
+    return view('my-images');
+})->name('my-images');
