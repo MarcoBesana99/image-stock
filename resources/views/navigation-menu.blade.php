@@ -29,7 +29,6 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto align-items-baseline">
-<<<<<<< HEAD
                 @if (Route::has('login'))
                     @if (!Auth::check())
                         <a href="{{ route('login') }}" class="text-sm mr-4 text-gray-700 underline">Log in</a>
@@ -39,8 +38,6 @@
                     @endif
                 @endif
 
-=======
->>>>>>> 49d58d7acb932959976d0e528320d661326b922f
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <x-jet-dropdown id="teamManagementDropdown">
