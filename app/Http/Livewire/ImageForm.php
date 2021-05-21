@@ -21,7 +21,7 @@ class ImageForm extends Component
         $this->tag = preg_replace('/\s+/', '', $this->tag);
 
         if (strlen($this->tag) > 0 )
-            array_push($this->tags, $this->tag);
+            array_push($this->tags, strtolower($this->tag));
 
         $this->tag = '';
     }
@@ -32,7 +32,7 @@ class ImageForm extends Component
 
     public function submit() {
         if (count($this->tags) === 0)
-            $tags = $this->tag;
+            $tags = strtolower($this->tag);
         else
             $tags = join(', ', $this->tags);
 

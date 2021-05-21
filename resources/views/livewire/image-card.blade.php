@@ -10,7 +10,7 @@
                     <h5>Tags</h5>
                     <div>
                         @foreach (explode(',', $tags) as $tag)
-                            <span class="badge badge-primary p-1">{{ $tag }}</span>
+                            <span class="badge badge-primary p-1 text-capitalize">{{ $tag }}</span>
                         @endforeach
                     </div>
                 </div>

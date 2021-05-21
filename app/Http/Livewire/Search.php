@@ -32,7 +32,7 @@ class Search extends Component {
         }
         else {
             $allImages = new Image();
-            $this->images = $allImages->orderBy('created_at', 'DESC')->where('tags', 'like', '%' . $this->search . '%')->get();
+            $this->images = $allImages->orderBy('created_at', 'DESC')->where('tags', 'like', '%' . strtolower($this->search) . '%')->get();
         }
     }
 }
