@@ -42,7 +42,7 @@ class ImageForm extends Component
             'title' => 'required'
         ]);
 
-        $file = $this->file->store('uploads', ['disk' => 'my_files']);
+        $file = $this->file->store('uploads', ['disk' => 's3']);
         $user_id = Auth::user()->id;
 
         $request['image_path'] = $file;
