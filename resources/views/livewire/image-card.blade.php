@@ -3,7 +3,7 @@
         <div class="card-body">
             <h2>{{ $title }}</h2>
         </div>
-        <img src="{{ asset('storage/' . $image_path) }}" alt="{{ $title }}">
+        <img src="{{ asset('uploads/' . $image_path) }}" alt="{{ $title }}">
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <div>
