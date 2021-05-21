@@ -46,7 +46,6 @@ class ImageForm extends Component
         $user_id = Auth::user()->id;
 
         $request['image_path'] = $file;
-        dd($request['image_path']);
         $request['tags'] = $tags;
         $request['user_id'] = $user_id;
         $request['title'] = $this->title;
