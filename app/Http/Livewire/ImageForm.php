@@ -42,14 +42,10 @@ class ImageForm extends Component
             'title' => 'required'
         ]);
 
-        //$file = $this->file->store('images', 'public');
+        $file = $this->file->store('images', 'public');
         $user_id = Auth::user()->id;
 
-        $image = $this->file('images');
-        $name = $image->getClientOriginalName();
-        $image->move(public_path() . '/img/', $name);
-
-        $request['image_path'] = $image;
+        $request['image_path'] = $file;
         $request['tags'] = $tags;
         $request['user_id'] = $user_id;
         $request['title'] = $this->title;
